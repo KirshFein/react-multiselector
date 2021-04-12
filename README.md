@@ -1,4 +1,6 @@
-# Шаблон проекта на React
+# React MultiSelector
+
+Проект для изучения взаимодействия React + TypeScript и других особенностей React
 
 Проект развернут на [Create React App](https://github.com/facebook/create-react-app).
 

@@ -39,6 +39,7 @@ module.exports = {
     'simple-import-sort/imports': 'warn',
     'react/jsx-wrap-multilines': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
     'import/no-unresolved': [
       2,
       {

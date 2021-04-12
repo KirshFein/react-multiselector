@@ -1,18 +1,18 @@
-
-
-form {
+.multiSelector {
   display: inline-block;
+  position: relative;
 
-  .multiSelector__selector {
+  &__selector {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    padding: 10px;
+    padding: 7px 70px 6px 7px;
     border: 1px solid rgba(0, 66, 105, 0.28);
     border-radius: 4px;
-    width: 21vw;
-    height: 60px;
+    width: 480px;
+    min-height: 33px;
+    max-width: 100%;
     background: transparent;
     outline: none;
     color: #002033;
@@ -25,32 +25,44 @@ form {
       content: "";
       z-index: 1;
       position: absolute;
-      height: 45px;
+      height: 32px;
       top: 7px;
       right: 34px;
       border-left: 1px solid #cbd2d7;
     }
 
     &__dropdown {
-      position: absolute;
-      z-index: 1;
-      top: 27px;
-      right: 14px;
-      border-top: 7px solid #7b8e9b;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      transition: transform 0.4s ease-in-out;
+      border: none;
+      background-color: transparent;
+      outline: none;
 
-      &--close {
+      & > span {
         position: absolute;
         z-index: 1;
-        top: 27px;
+        top: 20px;
         right: 14px;
         border-top: 7px solid #7b8e9b;
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
         transition: transform 0.4s ease-in-out;
-        transform: rotate(180deg);
+      }
+
+      &_close {
+        border: none;
+        background-color: transparent;
+        outline: none;
+
+        & > span {
+          position: absolute;
+          z-index: 1;
+          top: 20px;
+          right: 14px;
+          border-top: 7px solid #7b8e9b;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          transition: transform 0.4s ease-in-out;
+          transform: rotate(180deg);
+        }
       }
     }
 
@@ -58,18 +70,21 @@ form {
       color: #7b8e9b;
       padding: 0 8px 0 8px;
 
-      &--hide {
+      &_hide {
         display: none;
       }
     }
 
     &__del {
       position: absolute;
-      right: 38px;
-      top: 22px;
-      width: 32px;
-      height: 32px;
+      border: none;
+      background-color: transparent;
+      right: 41px;
+      top: 0;
+      width: 30px;
+      height: 30px;
       opacity: 0.3;
+      outline: none;
 
       &::before,
       &::after {
@@ -92,30 +107,37 @@ form {
 
     &__chosen {
       position: relative;
-      width: 5vw;
       padding: 8px;
       color: #2f5e7a;
       background-color: #edf2f4;
       border-radius: 3px;
+      display: flex;
+      margin-bottom: 4px;
+
+      &:not(:last-of-type) {
+        margin-right: 6px;
+      }
 
       &__text{
         margin: 0;
-        width: 2rem;
       }
 
       &__del {
-        position: absolute;
-        right: 12px;
-        top: 11px;
         width: 20px;
-        height: 20px;
+        height: 7px;
+        padding-bottom: 14px;
         opacity: 0.3;
+        display: block;
+        position: relative;
+        background-color: transparent;
+        border: none;
+        outline: none;
 
         &::before,
         &::after {
           content: "";
           position: absolute;
-          left: 15px;
+          left: 10px;
           height: 16px;
           width: 2px;
           background-color: #333;
@@ -135,21 +157,23 @@ form {
       display: flex;
       flex-direction: column;
       overflow: auto;
-      width: 21vw;
+      width: 100%;
       max-height: 26vh;
       margin: 13px 0 0;
+      padding: 11px;
       position: absolute;
       z-index: 4;
       background-color: #fff;
       box-shadow: 0 0 2px rgb(0 0 0 / 30%);
-      transition: opacity 0.8s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
 
-      & > div {
-        padding: 10px;
+      & > label {
+        padding: 6px;
       }
 
-      &--hide {
+      &_hide {
         opacity: 0;
+        pointer-events: none;
       }
     }
   }
