@@ -1,0 +1,156 @@
+
+
+form {
+  display: inline-block;
+
+  .multiSelector__selector {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    border: 1px solid rgba(0, 66, 105, 0.28);
+    border-radius: 4px;
+    width: 21vw;
+    height: 60px;
+    background: transparent;
+    outline: none;
+    color: #002033;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+
+    &::after {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      height: 45px;
+      top: 7px;
+      right: 34px;
+      border-left: 1px solid #cbd2d7;
+    }
+
+    &__dropdown {
+      position: absolute;
+      z-index: 1;
+      top: 27px;
+      right: 14px;
+      border-top: 7px solid #7b8e9b;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      transition: transform 0.4s ease-in-out;
+
+      &--close {
+        position: absolute;
+        z-index: 1;
+        top: 27px;
+        right: 14px;
+        border-top: 7px solid #7b8e9b;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transition: transform 0.4s ease-in-out;
+        transform: rotate(180deg);
+      }
+    }
+
+    &__text {
+      color: #7b8e9b;
+      padding: 0 8px 0 8px;
+
+      &--hide {
+        display: none;
+      }
+    }
+
+    &__del {
+      position: absolute;
+      right: 38px;
+      top: 22px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.3;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 15px;
+        height: 16px;
+        width: 2px;
+        background-color: #333;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &__chosen {
+      position: relative;
+      width: 5vw;
+      padding: 8px;
+      color: #2f5e7a;
+      background-color: #edf2f4;
+      border-radius: 3px;
+
+      &__text{
+        margin: 0;
+        width: 2rem;
+      }
+
+      &__del {
+        position: absolute;
+        right: 12px;
+        top: 11px;
+        width: 20px;
+        height: 20px;
+        opacity: 0.3;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 15px;
+          height: 16px;
+          width: 2px;
+          background-color: #333;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    &__boxOutputs {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      width: 21vw;
+      max-height: 26vh;
+      margin: 13px 0 0;
+      position: absolute;
+      z-index: 4;
+      background-color: #fff;
+      box-shadow: 0 0 2px rgb(0 0 0 / 30%);
+      transition: opacity 0.8s ease-in-out;
+
+      & > div {
+        padding: 10px;
+      }
+
+      &--hide {
+        opacity: 0;
+      }
+    }
+  }
+}
