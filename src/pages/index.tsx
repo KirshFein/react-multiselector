@@ -32,7 +32,7 @@ const Page: React.FC = () => {
   const titles = useMemo(() => resources.map((el) => el.link), [resources]);
 
   return (
-    <div>
+    <div className="container">
       <p>Без внешнего контроля с объектами</p>
       <MultiSelector items={resources} getLabel={getLabel} getValue={getValue} />
       <p>Без внешнего контроля со строками</p>

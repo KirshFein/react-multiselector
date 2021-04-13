@@ -1,19 +1,17 @@
 .multiSelector {
   display: inline-block;
   position: relative;
-  //TODO временно :{test}
-  max-width: 309px;
+  width: 100%;
 
   &__selector {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    padding: 7px 70px 6px 7px;
+    padding: 3px 70px 3px 7px;
     border: 1px solid rgba(0, 66, 105, 0.28);
     border-radius: 4px;
-    width: 480px;
-    min-height: 33px;
+    min-height: 40px;
     max-width: 100%;
     background: transparent;
     outline: none;
@@ -27,25 +25,25 @@
       content: "";
       z-index: 1;
       position: absolute;
-      height: 32px;
-      top: 7px;
+      height: calc(100% - 15px);
       right: 34px;
-      border-left: 1px solid #cbd2d7;
+      border-left: 1px solid #cbd2d7
     }
 
     &__dropdown {
       border: none;
       background-color: transparent;
       outline: none;
+      padding: 0;
 
       & > span {
         position: absolute;
         z-index: 1;
-        top: 20px;
+        top: 21px;
         right: 14px;
-        border-top: 7px solid #7b8e9b;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
+        border-top: 5px solid #7b8e9b;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
         transition: transform 0.4s ease-in-out;
       }
 
@@ -53,15 +51,16 @@
         border: none;
         background-color: transparent;
         outline: none;
+        padding: 0;
 
         & > span {
           position: absolute;
           z-index: 1;
-          top: 20px;
+          top: 21px;
           right: 14px;
-          border-top: 7px solid #7b8e9b;
-          border-left: 4px solid transparent;
-          border-right: 4px solid transparent;
+          border-top: 5px solid #7b8e9b;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
           transition: transform 0.4s ease-in-out;
           transform: rotate(180deg);
         }
@@ -82,9 +81,10 @@
       border: none;
       background-color: transparent;
       right: 41px;
-      top: 0;
+      top: 1px;
       width: 30px;
       height: 30px;
+      padding: 0;
       opacity: 0.3;
       outline: none;
 
@@ -114,11 +114,7 @@
       background-color: #edf2f4;
       border-radius: 3px;
       display: flex;
-      margin-bottom: 4px;
-
-      &:not(:last-of-type) {
-        margin-right: 6px;
-      }
+      margin: 1px 5px 2px 0;
 
       &__text{
         margin: 0;
@@ -127,7 +123,6 @@
       &__del {
         width: 20px;
         height: 7px;
-        padding-bottom: 14px;
         opacity: 0.3;
         display: block;
         position: relative;
@@ -140,7 +135,7 @@
           content: "";
           position: absolute;
           left: 10px;
-          height: 16px;
+          height: 13px;
           width: 2px;
           background-color: #333;
         }
@@ -160,17 +155,58 @@
       flex-direction: column;
       overflow: auto;
       width: 100%;
-      max-height: 26vh;
+      max-height: 185px;
       margin: 13px 0 0;
-      padding: 11px;
       position: absolute;
       z-index: 4;
       background-color: #fff;
       box-shadow: 0 0 2px rgb(0 0 0 / 30%);
       transition: opacity 0.3s ease-in-out;
 
-      & > label {
-        padding: 6px;
+      &__item {
+        padding: 17px 0 0 12px;
+        display: flex;
+      }
+
+      &__input {
+        display: none;
+      }
+
+      &__checkbox {
+        position: relative;
+
+        &::before {
+          content: " ";
+          display: inline-block;
+          box-sizing: border-box;
+          width: 16px;
+          height: 16px;
+          background-color: white;
+          border: 1px solid #B0B0B0;
+          border-radius: 30%;
+          margin-right: 6px;
+        }
+      }
+
+      &__input:checked + &__checkbox::before {
+        content: "";
+        color: #fff;
+        font-weight: 700;
+        background-color: #0078D2;
+        border: 1px solid #fff;
+      }
+
+      &__input:checked + &__checkbox::after {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 9.59px;
+        height: 5.59px;
+        box-sizing: border-box;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(308deg);
       }
 
       &_hide {

@@ -113,7 +113,7 @@ const MultiSelector: React.FC<PropsType> = ({ value, onChange, items, getLabel, 
             selected.length ? style.multiSelector__selector__text_hide : style.multiSelector__selector__text
           }`}
         >
-          Choose variant
+          Выберите ресурсы
         </span>
         <button
           type="button"
@@ -145,15 +145,16 @@ const MultiSelector: React.FC<PropsType> = ({ value, onChange, items, getLabel, 
         )}
       >
         {(items as (ItemType | string)[]).map((el) => (
-          <label key={getOptionalValue(el)}>
+          <label className={style.multiSelector__selector__boxOutputs__item} key={getOptionalValue(el)}>
             <input
+              className={style.multiSelector__selector__boxOutputs__input}
               checked={!!selected.find((f) => getOptionalValue(f) === getOptionalValue(el))}
               type="checkbox"
               name="custom-checkbox"
-              className={style.multiSelector__selector__checkbox}
               onChange={() => toggleItem(el)}
             />
-            <span>{getOptionalLabel(el)}</span>
+            <span className={style.multiSelector__selector__boxOutputs__checkbox} />
+            {getOptionalLabel(el)}
           </label>
         ))}
       </div>

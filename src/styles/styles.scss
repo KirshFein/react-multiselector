@@ -1,11 +1,17 @@
 @import "settings";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html,
 body {
   width: 100%;
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 
   & > div {
     height: 100%;
+  }
+
+  .container {
+    max-width: 390px;
   }
 }
