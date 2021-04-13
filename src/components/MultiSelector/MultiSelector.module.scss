@@ -1,6 +1,8 @@
 .multiSelector {
   display: inline-block;
   position: relative;
+  //TODO временно :{test}
+  max-width: 309px;
 
   &__selector {
     display: flex;
