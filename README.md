@@ -2,6 +2,8 @@
 
 Проект для изучения взаимодействия React + TypeScript и других особенностей React
 
+- test view demo : https://kirshfein.github.io/react-multiselector/
+
 Проект развернут на [Create React App](https://github.com/facebook/create-react-app).
 
 ## Скрипты
